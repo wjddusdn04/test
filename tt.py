@@ -324,7 +324,7 @@ fig, ax=plt.subplots()
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    c1 = st.radio('선의 색을 선택하시오', ['red','green', 'blue', 'yellow'])
+    c1 = st.radio('선의 색을 선택하시오', ['orange','green', 'blue', 'yellow'])
 with col2:
     s1 = st.radio('선의 형태를 선택하시오',['-', ':', '-.', '--'])
 with col3:
