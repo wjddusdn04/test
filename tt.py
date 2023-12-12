@@ -1,3 +1,60 @@
+
+import streamlit as st
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+fig, ax=plt.subplots()
+
+
+col1, col2, col3 = st.columns(3)
+
+
+a = st.number_input('a의 값을 입력하시오' , value=2.0, step=1.0)
+b = st.number_input('b의 값을 입력하시오' , value=-1.0, step=1.0)
+c = st.number_input('c의 값을 입력하시오' , value=15.0, step=1.0)
+d = st.number_input('d의 값을 입력하시오' , value=2000.0, step=100.0)
+
+
+with col1:
+    c1 = st.radio('선의 색을 선택하시오', ['orange','green', 'blue', 'yellow'])
+with col2:
+    s1 = st.radio('선의 형태를 선택하시오',['-', ':', '-.', '--'])
+with col3:
+    a1 = st.radio('마커의 형태를 선택하시오',['o' ,'^', 's', 'p', 'h']) 
+
+
+
+x=[]
+y1=[]
+y2=[]
+for i in range(-29,30,3):
+    x.append(i)
+    y1.append(a*i*i+b*i+c)
+    y2.append(d/i)
+
+# plt.plot(x,y,'r:h')
+
+plt.plot(x,y1,'go--', label='2nd Equation')
+plt.plot(x,y1,'rs:', label='sin Function')
+plt.legend()
+plt.plot(x, y2, color=c1, linestyle=s1, marker=a1)
+
+st.pyplot(fig)
+
+
+import sys
+sys.exit()
+
+# fig, ax=plt.subplots()
+
+
+
+
+
+
+
+
 # import streamlit as st
 
 
@@ -260,11 +317,11 @@
 # turtle.done()
 
 
-import streamlit as st
-# import time 
-# import random as r
-import matplotlib.pyplot as plt
-import numpy as np
+# import streamlit as st
+# # import time 
+# # import random as r
+# import matplotlib.pyplot as plt
+# import numpy as np
 
 # 그래프
 # fig, ax = plt.subplots()
@@ -318,40 +375,45 @@ import numpy as np
 
 
 # 함수그래프(이차함수)
-fig, ax=plt.subplots()
+# import streamlit as st
+# import matplotlib.pyplot as plt
+# import numpy as np
 
 
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    c1 = st.radio('선의 색을 선택하시오', ['orange','green', 'blue', 'yellow'])
-with col2:
-    s1 = st.radio('선의 형태를 선택하시오',['-', ':', '-.', '--'])
-with col3:
-    a1 = st.radio('마커의 형태를 선택하시오',['o' ,'^', 's', 'p', 'h']) 
-
-x=[]
-y=[]
-ysin=[]
-for i in range(-20,21,5):
-    x.append(i)
-    y.append(3*i*i-5*i+2)
-    ysin.append(1200*np.sin(i))
-
-# plt.plot(x,y,'r:h')
-
-plt.plot(x,y,'go--', label='2nd Equation')
-plt.plot(x,ysin,'rs:', label='sin Function')
-plt.legend()
-plt.plot(x, y, color=c1, linestyle=s1, marker=a1)
-
-st.pyplot(fig)
+# fig, ax=plt.subplots()
 
 
-import sys
-sys.exit()
+# col1, col2, col3 = st.columns(3)
 
-fig, ax=plt.subplots()
+# with col1:
+#     c1 = st.radio('선의 색을 선택하시오', ['orange','green', 'blue', 'yellow'])
+# with col2:
+#     s1 = st.radio('선의 형태를 선택하시오',['-', ':', '-.', '--'])
+# with col3:
+#     a1 = st.radio('마커의 형태를 선택하시오',['o' ,'^', 's', 'p', 'h']) 
+
+# x=[]
+# y=[]
+# ysin=[]
+# for i in range(-20,21,5):
+#     x.append(i)
+#     y.append(3*i*i-5*i+2)
+#     ysin.append(1200*np.sin(i))
+
+# # plt.plot(x,y,'r:h')
+
+# plt.plot(x,y,'go--', label='2nd Equation')
+# plt.plot(x,ysin,'rs:', label='sin Function')
+# plt.legend()
+# plt.plot(x, y, color=c1, linestyle=s1, marker=a1)
+
+# st.pyplot(fig)
+
+
+# import sys
+# sys.exit()
+
+# fig, ax=plt.subplots()
 
 
 
